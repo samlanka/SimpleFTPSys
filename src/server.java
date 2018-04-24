@@ -82,7 +82,7 @@ public class server{
 				
 				//Extract sequence num, checksum, packetType and message from received packet
 				int seqNum = decimal(data.substring(0,32));
-				System.out.println("Received packet " + seqNum);
+				
 				int oldChecksum = decimal(data.substring(32,48));
 				String dataType = data.substring(48,64);
 				String message = data.substring(64, data.length());
@@ -104,6 +104,7 @@ public class server{
 
 				else if (matchCS && seqNum == count){
 					//Packet received correctly
+					System.out.println("Received packet " + seqNum);
 					msgBuffer.write(message.getBytes());
 					int portNum = fromClient.getPort();
 					InetAddress IPadd = fromClient.getAddress();
