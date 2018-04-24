@@ -172,7 +172,7 @@ public class client{
 			}
 
 			int timeout = 1000;// in milliseconds
-			byte[] receive = new byte[1536]; //WHY??????
+			byte[] receive = new byte[1536]; 
 			DatagramPacket fromReceiver = new DatagramPacket(receive, receive.length);
 	
 			int temp = curSeg;
@@ -195,7 +195,7 @@ public class client{
 				}
 			} 
 			catch (IOException ste) {// timeout
-				System.out.println("Timeout, sequence number = " + ackSeqNum);
+				System.out.println("Timeout, sequence number = " + (ackSeqNum + 1));
 				curSeg = ackSeqNum + 1;
 				segPointer = 0;
 			} 
