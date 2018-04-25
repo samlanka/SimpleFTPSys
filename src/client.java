@@ -1,3 +1,7 @@
+//Sameera Lanka
+//North Carolina State University
+//Go-Back-N ARQ Client
+
 import java.io.File;
 import java.io.IOException;
 import java.net.DatagramPacket;
